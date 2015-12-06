@@ -1,4 +1,4 @@
-# Text-- https://github.com/ChajusSaib/Text--/blob/master/src/images/app_icon.png
+# Text-- ![alt tag](https://github.com/ChajusSaib/Text--/blob/master/src/images/app_icon.png)
 Just a simple text editor created using Qt.
 
 
