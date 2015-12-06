@@ -1,4 +1,4 @@
-# Text-- ![alt tag](https://www.iconfinder.com/icons/728933/download/png/48)
+# Text--![alt tag](https://www.iconfinder.com/icons/728933/download/png/32)
 Just a simple text editor created using Qt.
 
 
