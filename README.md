@@ -1,6 +1,6 @@
 # Text--      ![alt tag](https://www.iconfinder.com/icons/728933/download/png/32)
 Just a simple text editor created using Qt.
-
+![alt tag](http://i.imgur.com/nlDpEP4.png)
 
 # License
 
