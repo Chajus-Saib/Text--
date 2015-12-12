@@ -12,12 +12,16 @@ TextEditor::TextEditor(QWidget *parent) :
     ui->setupUi(this);
     readSettings();
 
+    processPaste();
+
     connect(ui->textEdit, SIGNAL(textChanged()), this, SLOT(textModified()));
     connect(ui->actionQuit, SIGNAL(triggered()), this, SLOT(close()));
     connect(ui->textEdit, SIGNAL(undoAvailable(bool)), ui->actionUndo, SLOT(setEnabled(bool)));
     connect(ui->textEdit, SIGNAL(redoAvailable(bool)), ui->actionRedo, SLOT(setEnabled(bool)));
     connect(ui->textEdit, SIGNAL(copyAvailable(bool)), ui->actionCopy, SLOT(setEnabled(bool)));
     connect(ui->textEdit, SIGNAL(copyAvailable(bool)), ui->actionCut, SLOT(setEnabled(bool)));
+    connect(ui->menuEdit, SIGNAL(aboutToShow()), this, SLOT(processPaste()));
+    connect(ui->textEdit, SIGNAL(selectionChanged()), this, SLOT(processDelete()));
     connect(ui->actionAbout_Qt, SIGNAL(triggered(bool)), qApp, SLOT(aboutQt()));
 
     setCurrentFile("");
@@ -193,6 +197,28 @@ void TextEditor::on_actionFind_Replace_triggered()
     frdialog->activateWindow();
 }
 
+void TextEditor::processPaste()
+{
+    if (const QMimeData *md = QApplication::clipboard()->mimeData())
+        ui->actionPaste->setEnabled(md->hasText());
+}
+
+void TextEditor::processDelete()
+{
+    ui->actionDelete->setEnabled(!ui->textEdit->textCursor().selectedText().isEmpty());
+}
+
+void TextEditor::on_actionAbout_Text_triggered()
+{
+    QMessageBox::about(this, tr("About Text--"),
+                       tr("<h2>Text-- 1.2</h2>"
+                          "<p>Copyright &copy; 2015 <a href='https://github.com/ChajusSaib'>ChajusSaib</a></p>"
+                          "<p>Under <a href='https://github.com/ChajusSaib/Text--/blob/master/LICENSE'>The MIT License</a></p>"
+                          "<p><a href='https://github.com/ChajusSaib/Text--'>Text--</a> is just simple! </p>"));
+}
+
+
+
 void TextEditor::highlightText(const QString &str, const QTextDocument::FindFlags &flags)
 {
     static QTextCursor origCur;
@@ -271,13 +297,4 @@ void TextEditor::unhighlight()
 {
     extraSelections = QList<QTextEdit::ExtraSelection>();
     ui->textEdit->setExtraSelections(extraSelections);
-}
-
-void TextEditor::on_actionAbout_Text_triggered()
-{
-    QMessageBox::about(this, tr("About Text--"),
-                       tr("<h2>Text-- 1.0</h2>"
-                          "<p>Copyright &copy; 2015 <a href='https://github.com/ChajusSaib'>ChajusSaib</a></p>"
-                          "<p>Under <a href='https://github.com/ChajusSaib/Text--/blob/master/LICENSE'>The MIT License</a></p>"
-                          "<p><a href='https://github.com/ChajusSaib/Text--'>Text--</a> is just simple! </p>"));
 }
