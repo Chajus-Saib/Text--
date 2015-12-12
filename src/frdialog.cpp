@@ -21,6 +21,7 @@ FRDialog::~FRDialog()
 
 void FRDialog::on_findButton_clicked()
 {
+    emit unhighlight();
     emit find(ui->findEdit->text(), ui->matchCase->isChecked(), ui->searchBack->isChecked());
 }
 
@@ -39,4 +40,5 @@ void FRDialog::on_replaceButton_clicked()
 void FRDialog::on_replaceAllButton_clicked()
 {
     emit replaceAll(ui->findEdit->text(), ui->replaceEdit->text(), ui->matchCase->isChecked(), ui->searchBack->isChecked());
+    emit unhighlight();
 }

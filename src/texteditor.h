@@ -27,6 +27,8 @@ protected:
 
 private slots:
     void unhighlight();
+    void processPaste();
+    void processDelete();
 
     void find(const QString &str, bool cs, bool backwards);
     void replace(const QString &str, const QString &rplcStr, bool cs, bool backwards);

@@ -20,6 +20,9 @@
    <iconset resource="icons.qrc">
     <normaloff>:/images/images/app_icon.png</normaloff>:/images/images/app_icon.png</iconset>
   </property>
+  <property name="statusTip">
+   <string/>
+  </property>
   <widget class="QWidget" name="centralWidget">
    <property name="enabled">
     <bool>true</bool>
@@ -100,8 +103,8 @@
   </widget>
   <action name="actionNew">
    <property name="icon">
-    <iconset theme="document-new">
-     <normaloff>.</normaloff>.</iconset>
+    <iconset resource="icons.qrc">
+     <normaloff>:/images/images/new_file.png</normaloff>:/images/images/new_file.png</iconset>
    </property>
    <property name="text">
     <string>New</string>
@@ -118,8 +121,8 @@
   </action>
   <action name="actionOpen">
    <property name="icon">
-    <iconset theme="document-open">
-     <normaloff>.</normaloff>.</iconset>
+    <iconset resource="icons.qrc">
+     <normaloff>:/images/images/open_file.png</normaloff>:/images/images/open_file.png</iconset>
    </property>
    <property name="text">
     <string>Open...</string>
@@ -130,8 +133,8 @@
   </action>
   <action name="actionSave">
    <property name="icon">
-    <iconset theme="document-save">
-     <normaloff>.</normaloff>.</iconset>
+    <iconset resource="icons.qrc">
+     <normaloff>:/images/images/save_file.png</normaloff>:/images/images/save_file.png</iconset>
    </property>
    <property name="text">
     <string>Save</string>
@@ -142,8 +145,8 @@
   </action>
   <action name="actionSave_As">
    <property name="icon">
-    <iconset theme="document-save-as">
-     <normaloff>.</normaloff>.</iconset>
+    <iconset resource="icons.qrc">
+     <normaloff>:/images/images/save_as_file.png</normaloff>:/images/images/save_as_file.png</iconset>
    </property>
    <property name="text">
     <string>Save As...</string>
@@ -154,8 +157,8 @@
   </action>
   <action name="actionQuit">
    <property name="icon">
-    <iconset theme="application-exit">
-     <normaloff>.</normaloff>.</iconset>
+    <iconset resource="icons.qrc">
+     <normaloff>:/images/images/exit_app.png</normaloff>:/images/images/exit_app.png</iconset>
    </property>
    <property name="text">
     <string>Quit</string>
@@ -243,6 +246,9 @@
    </property>
   </action>
   <action name="actionDelete">
+   <property name="enabled">
+    <bool>false</bool>
+   </property>
    <property name="icon">
     <iconset theme="edit-delete">
      <normaloff>.</normaloff>.</iconset>
@@ -268,8 +274,8 @@
   </action>
   <action name="actionAbout_Qt">
    <property name="icon">
-    <iconset theme="help-about">
-     <normaloff>.</normaloff>.</iconset>
+    <iconset resource="icons.qrc">
+     <normaloff>:/images/images/qt.png</normaloff>:/images/images/qt.png</iconset>
    </property>
    <property name="text">
     <string>About Qt...</string>
@@ -277,8 +283,8 @@
   </action>
   <action name="actionAbout_Text">
    <property name="icon">
-    <iconset theme="help-about">
-     <normaloff>.</normaloff>.</iconset>
+    <iconset resource="icons.qrc">
+     <normaloff>:/images/images/app_icon.png</normaloff>:/images/images/app_icon.png</iconset>
    </property>
    <property name="text">
     <string>About SimpleText</string>
