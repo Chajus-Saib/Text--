@@ -1,3 +1,7 @@
+### Preface(Added 2022. Rest of the project is from 2015)
+
+> I made this in 2015 to test out my knowledge of Qt and familiarise myself witht he built in widgets of Qt before moving on to create my own such as those used in [Word Search Solver](https://github.com/Chajus-Saib/word-search-solver)
+
 # Text--      ![alt tag](https://www.iconfinder.com/icons/728933/download/png/32)
 Just a simple text editor created using Qt.
 ![alt tag](http://i.imgur.com/nlDpEP4.png)
